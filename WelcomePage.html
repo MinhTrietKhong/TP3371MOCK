@@ -93,6 +93,20 @@
         color: #0f172a;
       }
 
+      .btn-featured {
+        border: 0;
+        cursor: pointer;
+        background: linear-gradient(135deg, #f97316, #ea580c);
+        color: #fff;
+        box-shadow: 0 12px 22px rgba(234, 88, 12, 0.28);
+      }
+
+      .click-count {
+        margin: 14px 0 0;
+        color: #64748b;
+        font-size: 0.95rem;
+      }
+
       .features {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -141,7 +155,13 @@
         <div class="actions">
           <a class="btn btn-primary" href="#">Get Started</a>
           <a class="btn btn-secondary" href="#">Learn More</a>
+          <button class="btn btn-featured" id="featured-button" type="button">
+            Featured Action
+          </button>
         </div>
+        <p class="click-count" aria-live="polite">
+          Featured action clicked <span id="click-count">0</span> times
+        </p>
 
         <div class="features">
           <div class="feature">
@@ -159,5 +179,16 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const featuredButton = document.getElementById("featured-button");
+      const clickCount = document.getElementById("click-count");
+      let clicks = 0;
+
+      featuredButton.addEventListener("click", () => {
+        clicks += 1;
+        clickCount.textContent = clicks;
+      });
+    </script>
   </body>
 </html>
