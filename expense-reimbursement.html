@@ -19,6 +19,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Expense Reimbursement</title>
+  <link rel="stylesheet" href="Style.css">
 </head>
 
 <body>
@@ -187,6 +188,17 @@
           <label for="receiptAttached">
             Receipt attached
           </label>
+
+          <label for="receiptFile" class="file-label">
+            Add receipt file
+          </label>
+
+          <input
+            id="receiptFile"
+            name="receiptFile"
+            type="file"
+            accept=".pdf,image/*"
+          >
 
         </fieldset>
 
